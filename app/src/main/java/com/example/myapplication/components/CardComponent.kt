@@ -1,5 +1,6 @@
 package com.example.myapplication.components
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -38,10 +39,12 @@ fun TwoCards(title1: String, number1: String, title2: String, number2:String){
 
 @Composable
 fun MainCard(title: String, number: String, modifier: Modifier = Modifier){
+    val isDarkTheme = isSystemInDarkTheme()
+    val isContainerColor= if (isDarkTheme) Color(0xFF90C7E0) else Color(0xFF00B0FF)
     Card (
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = Color(0x4500B0FF)
+            containerColor = isContainerColor
         )
     ){
         Column(
