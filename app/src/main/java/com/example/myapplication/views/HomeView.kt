@@ -104,9 +104,13 @@ fun ContentHomeView(paddingValues: PaddingValues){
                 title = "Error" ,
                 message = "Debes escribir dos números positivos tanto en 'Precio' como en 'Descuento'.",
                 confirmText = "Aceptar",
-                onConfirmClick = {showAlert = false })
+                onConfirmClick = {showAlert = false
+                    precio = ""
+                    descuento = ""
+                    totalDescuento = "0"
+                    precioDescuento = "0"})
             {
-                //para realizar otra acción al momento de quitar la alerta, en este caso no es necesario.
+
             }
         }
     }
